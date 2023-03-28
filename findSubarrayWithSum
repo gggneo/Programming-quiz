@@ -1,0 +1,49 @@
+ <!-- 
+/* For input 22, return the continuous sub array [6,7,9] 
+whose sum is 22.For input 5, return the continuous sub array [2,3] 
+or [5] whose sum is 5.For input 26, return the continuous sub array [4,6,7,9] 
+whose sum is 26.
+For input 28, return the continuous sub array [4,6,7,9,2] 
+whose sum is 28.For any input, 
+if there is NO continuous sub array found whose sum is equal to the given number then return []. 
+     */
+     
+     function contin(arr, target) {
+     /* function findSubarrayWithSum(arr, target) { */
+  let start = 0;
+  let end = 0;
+  let sum = 0;
+  let result = [];
+
+  while (end < arr.length) {
+    if (sum < target) {
+      sum += arr[end];
+      end++;
+    } else if (sum > target) {
+      sum -= arr[start];
+      start++;
+    } else {
+      result = arr.slice(start, end);
+      break;
+    }
+  }
+ console.log(result);
+  return result;
+}
+    /*   console.log(inp);
+      const arr = [4,6,7,9,2,3,5];
+      var sum=0;
+      var newarr = arr;
+      for (var i=0; i<arr.length; i++) {
+      sum+=
+       if (sum > inp) {
+        console.log(newarr);
+        }
+         
+      }
+      
+      console.log(sum);
+      
+           } */
+     const arr = [4, 6, 7, 9, 2, 3, 5];
+     contin(arr, 21);
